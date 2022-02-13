@@ -18,7 +18,8 @@ const LeagueTable = () => {
                 const positions = snapshot.docs.map(doc=>({
                     id: doc.id,
                     ...doc.data()
-                }));
+                })).sort((a,b) => b.pts - a.pts);
+                console.log(positions)
                 setPosition(positions)
             })
         }
